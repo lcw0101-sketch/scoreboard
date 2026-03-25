@@ -104,6 +104,14 @@
 
     </div>
 
+    <!-- 점수 초기화 버튼 (새로 추가된 부분) -->
+    <div class="mt-8 flex justify-center w-full">
+        <button onclick="resetScores()" class="flex items-center gap-2 px-8 py-3 bg-gray-800 text-red-400 hover:bg-gray-700 hover:text-red-300 rounded-full font-bold transition-colors shadow-lg border border-gray-700">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+            양팀 점수 초기화
+        </button>
+    </div>
+
     <div class="mt-12 text-gray-500 text-sm">
         💡 점수판 배경(색상 부분)을 클릭하면 1점씩 올라갑니다.
     </div>
@@ -137,6 +145,14 @@
                 redScore = Math.max(0, redScore + amount);
                 redScoreDisplay.innerText = redScore;
             }
+        }
+
+        // 양팀 점수 초기화 함수 (새로 추가된 부분)
+        function resetScores() {
+            blueScore = 0;
+            redScore = 0;
+            blueScoreDisplay.innerText = blueScore;
+            redScoreDisplay.innerText = redScore;
         }
 
         // 시간 포맷 함수 (MM:SS)
